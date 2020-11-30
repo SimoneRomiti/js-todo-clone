@@ -4,6 +4,6 @@
   font-weight: 700;
 }
 
-li{
+li, input{
   margin: 20px;
 }

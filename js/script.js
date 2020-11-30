@@ -11,8 +11,10 @@ $(document).ready(
       "Giocare alla Play Station"
     ];
 
-    var source = document.getElementById("entry-template").innerHTML;
+    var source = $("#entry-template").html();
     var template = Handlebars.compile(source);
+
+
 
     for(var i = 0; i < arrayTodo.length; i++){
 
@@ -24,6 +26,29 @@ $(document).ready(
       $(".prova").append(html);
 
     }
+
+    $("input").keydown(
+      function(){
+        if(event.which == 13){
+          var newElement = $("input").val();
+          var context = {
+             text: newElement,
+          };
+          var html = template(context);
+          $(".prova").append(html);
+        }
+      }
+    );
+
+    $(".delete").click(
+      function(){
+
+        $(this).parent().remove();
+
+      }
+    );
+
+
 
 
   }
