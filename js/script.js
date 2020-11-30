@@ -28,7 +28,7 @@ $(document).ready(
     }
 
     $("input").keydown(
-      function(){
+      function(event){
         if(event.which == 13){
           var newElement = $("input").val();
           var context = {
@@ -37,8 +37,8 @@ $(document).ready(
           var html = template(context);
           $(".prova").append(html);
           $(".prova li:last-child").hide();
-          $(".prova li:last-child").show("slow");
-
+          $(".prova li:last-child").show("fast");
+          $("input").val("");
         }
       }
     );
@@ -46,7 +46,7 @@ $(document).ready(
     $(document).on("click", ".delete",
       function(){
 
-        $(this).parent().hide("slow");
+        $(this).parent().hide("fast");
 
       }
     );
