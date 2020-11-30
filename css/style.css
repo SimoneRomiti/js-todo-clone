@@ -1,0 +1,9 @@
+.delete{
+  color: red;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+li{
+  margin: 20px;
+}
