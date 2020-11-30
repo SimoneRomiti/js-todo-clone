@@ -36,20 +36,20 @@ $(document).ready(
           };
           var html = template(context);
           $(".prova").append(html);
+          $(".prova li:last-child").hide();
+          $(".prova li:last-child").show("slow");
+
         }
       }
     );
 
-    $(".delete").click(
+    $(document).on("click", ".delete",
       function(){
 
-        $(this).parent().remove();
+        $(this).parent().hide("slow");
 
       }
     );
-
-
-
 
   }
 );
